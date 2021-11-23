@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: media_service_backend CI
 
 # Controls when the workflow will run
 on:
@@ -38,3 +38,17 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+- name: Send mail
+  uses: dawidd6/action-send-mail@v3
+  with:
+    # Required mail server address:
+    server_address: smtp.gmail.com
+    # Required mail server port:
+    server_port: 465
+    # Optional (recommended): mail server username:
+    username: ${{secrets.MAIL_USERNAME}}
+    # Optional (recommended) mail server password:
+    password: ${{secrets.MAIL_PASSWORD}}
+    # Required mail subject:
+    subject: Github Actions job result
+    # Required recipients' addresses:
