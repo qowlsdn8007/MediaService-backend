@@ -41,9 +41,9 @@ jobs:
           # Required mail server port:
           server_port: 465
           # Optional (recommended): mail server username:
-          username: ${{secrets.qowlsdn8007@gmail.com}}
+          username: ${{secrets.EMAIL_ID}}
           # Optional (recommended) mail server password:
-          password: ${{secrets.bjs007!!}}
+          password: ${{secrets.EMAIL_PW}}
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
