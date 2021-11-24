@@ -7,7 +7,7 @@ name: media_service_backend CI
 # pull_request - develop
 on:
   push:
-    branches: [ '**' ]
+    branches: [ '*' ]
 
   pull_request:
     branches: [ develop ]
