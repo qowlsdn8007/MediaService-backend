@@ -4,7 +4,6 @@ name: media_service_backend CI
 
 # Controls when the workflow will run
 on:
-
   push:
     branches: [ develop]
 
@@ -40,4 +39,3 @@ jobs:
 
       - name: build and Test with Gradle
         run: ./gradlew --info build
-
