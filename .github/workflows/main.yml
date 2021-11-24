@@ -28,7 +28,6 @@ jobs:
       # docker container start
       - name: Start containers
         run: docker-compose -f "docker-compose.yml" up -d --build
-
       - name: Set up JDK 11
         uses: actions/setup-java@v1
         with:
@@ -38,27 +37,4 @@ jobs:
         run: chmod +x gradlew
  
       - name: Test with Gradle
-        run: ./gradlew --info test
-
-      - name: Send mail
-        uses: dawidd6/action-send-mail@v3
-        with:
-          # Required mail server address:
-          server_address: smtp.gmail.com
-          # Required mail server port:
-          server_port: 465
-          # Optional (recommended): mail server username:
-          username: ${{secrets.EMAIL_ID}}
-          
-          # Optional (recommended) mail server password:
-          password: ${{secrets.EMAIL_PW}}
-          # Required mail subject:
-          subject: Github Actions job result
-          # Required recipients' addresses:
-          to: jinwoo_bae2@tmax.co.kr, wlji123456@gmail.com, yoodongphil@gmail.com, jeonggon8709@gmail.com, taehee.tmax@gmail.com, kkp7982@gmail.com, als95@gmail.com
-          # Required sender full name (address can be skipped):
-          from: co-tlin team # <user@example.com>
-          # Optional whether this connection use TLS (default is true if server_port is 465)
-          secure: true
-          # Optional plain body:
-          body: Build job of ${{github.repository}} completed successfully!
+        run: ./gradlew --info main
