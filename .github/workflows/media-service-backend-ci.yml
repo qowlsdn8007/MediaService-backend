@@ -4,6 +4,7 @@ name: media_service_backend CI
 
 # Controls when the workflow will run
 on:
+
   push:
     branches: [ develop ]
 
@@ -31,7 +32,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'termuin'
+          distribution: 'termurin'
 
       # allow gradlew permission
       - name: Grant execute permission for gradlew
@@ -39,3 +40,4 @@ jobs:
 
       - name: build and Test with Gradle
         run: ./gradlew --info build
+
